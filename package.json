@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "mongoose": "^6.6.4",
+    "uid": "^2.0.1"
+  },
+  "name": "chat-application-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.8.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "ts-node-dev --respawn app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
