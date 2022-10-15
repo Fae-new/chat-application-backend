@@ -9,7 +9,7 @@ export const errorHandlerMiddleware:ErrorRequestHandler=(err,req,res,next)=>{
     console.log(err);
     
 if( err instanceof CustomApiError){
-    return res.status(err.statusCode).json({msg:err.message})
+    return res.status(err.statusCode).send(err.message)
 }
 
 else if(err instanceof Error){

@@ -4,7 +4,9 @@ import { register,login } from '../controllers/authController'
 const router=express.Router()
 
 
-router.route('/').post(register).get(login)
+router.route('/register').post(register)
+
+router.route('/login').post(login)
 
 
 

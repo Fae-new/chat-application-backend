@@ -1,9 +1,11 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
     "mongoose": "^6.6.4",
+    "socket.io": "^4.5.2",
     "uid": "^2.0.1"
   },
   "name": "chat-application-backend",
