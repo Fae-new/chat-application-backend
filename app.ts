@@ -70,7 +70,6 @@ socket.on('add_contact',(data)=>{
     socket.to(data.id).emit('collect_contact',data.contactInfo)
 })
 
-
 })
 
 

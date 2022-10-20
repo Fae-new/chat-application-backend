@@ -4,10 +4,16 @@ import users from "../db/models/users"
 import { uid } from 'uid'
 import chats from "../db/models/contacts"
 
+interface registerReqBody{
+   username:string;
+   password:string;
+   email:string;
+}
+
 
 const register = async (req: Request, res: Response, next: NextFunction) => {
 
-   const { username, password, email } = req.body
+   const { username, password, email }:registerReqBody = req.body
    if (!username || !password || !email) {
       return next(createError('username,password or email is missing', 400))
    }
@@ -20,6 +26,7 @@ const register = async (req: Request, res: Response, next: NextFunction) => {
  
    const user=await users.create({
       userName: username,
+      userNameLowercase:username.toLowerCase(),
       email: email,
       password: password
    })
