@@ -15,6 +15,7 @@ const app = express()
 const server = http.createServer(app)
 
 
+
 app.use(express.json())
 app.use(cors())
 app.use('/users', userRouter)
@@ -34,7 +35,7 @@ const io = new Server(server, {
 const start = async () => {
     if (process.env.MONGO_URI) {
         try {
-            await connectDB(process.env.MONGO_URI)
+            await connectDB('mongodb+srv://jay:1234@cluster0.cw4vt.mongodb.net/chat-app?retryWrites=true&w=majority')
             server.listen(3000, () => {
                 console.log('server started');
 
