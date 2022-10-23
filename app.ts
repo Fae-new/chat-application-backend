@@ -57,18 +57,24 @@ const start = async () => {
 io.on('connection', (socket) => {
     console.log('user connected' + socket.id);
 
+    socket.emit
+
     socket.on('send_message', (data) => {
         socket.to(data.chatId).emit('recieve_message', data)
     })
     socket.on('join_room',(data)=>{
-        socket.join(data)
-
-        
+        socket.join(data)  
     })
-socket.on('add_contact',(data)=>{
 
+
+socket.on('add_contact',(data)=>{
     socket.to(data.id).emit('collect_contact',data.contactInfo)
 })
+
+// socket.on('set_status',(data)=>{
+// socket.emit('online',data)
+
+// })
 
 })
 
