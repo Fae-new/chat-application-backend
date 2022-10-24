@@ -35,8 +35,8 @@ const io = new Server(server, {
 const start = async () => {
     if (process.env.MONGO_URI) {
         try {
-            await connectDB('mongodb+srv://jay:1234@cluster0.cw4vt.mongodb.net/chat-app?retryWrites=true&w=majority')
-            server.listen(3000, () => {
+            await connectDB(process.env.MONGO_URI)
+            server.listen(process.env.PORT||3000, () => {
                 console.log('server started');
 
             })
