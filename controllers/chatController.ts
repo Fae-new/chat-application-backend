@@ -35,7 +35,7 @@ export const search = async (req: Request, res: Response, next: NextFunction) =>
 
     const { username } = req.body
     if (!username) { return next(createError('No search value', 400)) }
-    const Users = await users.find({ userNameLowercase: username })
+    const Users = await users.find({ userName: username })
 
     let usersFound: {
         userName: string;
